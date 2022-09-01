@@ -1,0 +1,83 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+}
+
+html body #home-rocketflix,
+html body #descubra-esse-filme {
+    background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%);
+    display: block;
+}
+
+.title {
+    color: #fff;
+    font-weight: 700;
+}
+
+.resume {
+    color: #fff;
+    width: 50%;
+    text-align: center;
+}
+
+.preloader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%);
+}
+
+.preloader.active {
+    display: flex;
+}
+
+.preloader:not(.active) {
+    display: none!important;
+}
+
+.cover-movie {
+    width: 100%;
+    border: 2px solid #fff;
+}
+
+.title-movie {
+    font-style: Bold;
+    font-size: 35px;
+    line-height: 30px;
+    color: #fff;
+}
+
+.resume-movie {
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.genres-area {
+    gap: 12px;
+}
+
+.genres-area span{
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #fff;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+
+.layout-movie {
+    width: 100%;
+}
+.image-area {
+    width: 25%;
+}
+.info-area {
+    width: 75%;
+}
