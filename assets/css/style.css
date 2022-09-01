@@ -8,8 +8,13 @@ body {
 
 html body #home-rocketflix,
 html body #descubra-esse-filme {
-    background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%);
+    /* background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%); */
+    background:linear-gradient(43deg, #37393e 0%, #000 52%, #666 100%);
     display: block;
+}
+
+#descubra-esse-filme .container{
+    min-height: 100vh;
 }
 
 .title {
@@ -29,7 +34,9 @@ html body #descubra-esse-filme {
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%);
+    /* background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%); */
+    background:linear-gradient(43deg, #37393e 0%, #000 52%, #666 100%);
+
 }
 
 .preloader.active {
@@ -56,6 +63,7 @@ html body #descubra-esse-filme {
     font-size: 16px;
     line-height: 24px;
     color: #fff;
+    text-align: justify;
 }
 
 .genres-area {
@@ -69,6 +77,13 @@ html body #descubra-esse-filme {
     padding: 5px 20px;
     border-radius: 20px;
     font-size: 12px;
+    transition: all 0.3s ease-in;
+}
+
+.genres-area span:hover{
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #fff;
 }
 
 
@@ -80,4 +95,25 @@ html body #descubra-esse-filme {
 }
 .info-area {
     width: 75%;
+}
+
+.plataforms-avaible {
+    color: #fff;
+    font-weight: 600;
+}
+
+
+.providers-area {
+    gap: 10px;
+  }
+
+  .providers-area img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+  }
+
+.release-date-mock {
+    color: #fff;
+    font-weight: 600;
 }

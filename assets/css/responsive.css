@@ -1,0 +1,61 @@
+@media only screen and (max-width:769px) {
+    /* Home */
+    .title {
+        text-align: center;
+    }
+    .resume {
+        width: 100%;
+    }
+
+    /* Descubra esse filme */
+
+    /* Layout Movie */
+    .layout-movie {
+        flex-direction: column!important;
+    }
+
+    .image-area {
+        width: 100%;
+        padding: 0!important;
+    }
+
+    .image-area img{
+        width: 250px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        display: block;
+    }
+
+    .info-area {
+        width: 100%;
+    }
+
+    .info-area h1.title-movie{
+        text-align: center;
+    }
+
+    .info-area p.resume-movie{
+        text-align: center;
+    }
+
+    .release-date-mock {
+        text-align: center;
+    }
+
+    .plataforms-avaible {
+        text-align: center;
+    }
+
+    .info-area .genres-area {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .providers-area {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
+
+}
