@@ -1,5 +1,6 @@
 
-# TrinityFlix(https://trinityflix.thetrinityweb.com.br/)
+# TrinityFlix
+https://trinityflix.thetrinityweb.com.br/
 
 ![Cover](https://trinityflix.thetrinityweb.com.br/assets/img/git-cover.png)
 
