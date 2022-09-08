@@ -1,13 +1,13 @@
 async function getData(){
-    movieID = generateRandomID();
+    const movieID = generateRandomID();
     try {
         const promiseMoviesDetail = await axios.get(generateRandomMovieUrl(movieID));
         const promiseMoviesProviders = await axios.get(generateUrlProviders(movieID));
 
         const moviesDetail = promiseMoviesDetail.data;
         const moviesProviders = promiseMoviesProviders.data;
-
-        console.log(moviesDetail, moviesProviders);
+        
+        console.log(moviesDetail, moviesProviders.results);
 
         saveMovieDetails(moviesDetail, moviesProviders)
     } catch (e) {
@@ -16,8 +16,10 @@ async function getData(){
 }
 getData()
 
+
 function generateRandomID(){
-    const movieID = Math.floor(Math.random() * 9999) + 1;
+    const movieID = Math.floor(Math.random() * (10000 - 0) + 0);
+    
     // const movieID = 9955;
     console.log("ID SORTEADO: ", movieID);
     return movieID;
@@ -43,29 +45,51 @@ function saveMovieDetails(moviesDetail, moviesProviders){
     const movieGenerosArray = moviesDetail.genres;
     // const movieAdults = moviesDetail.adult;
     const movieCover = `https://image.tmdb.org/t/p/original${moviesDetail.poster_path}`;
-
+    
     if (!('BR' in moviesProviders.results)){
         throw Error();
     }
+    
+    if ('flatrate' in moviesProviders.results['BR'], 'rent' in moviesProviders.results['BR'], 'buy' in moviesProviders.results['BR']){
+        const movieProvidersFlatrate = moviesProviders.results.BR.flatrate;
+        const movieProvidersRent = moviesProviders.results.BR.rent;
+        const movieProvidersBuy = moviesProviders.results.BR.buy;
 
-    if (!('flatrate' in moviesProviders.results['BR'])){
+        insertContent(movieTitle, movieResume, movieCover, movieReleaseDate, movieGenerosArray, movieProvidersFlatrate, movieProvidersBuy, movieProvidersRent)    
+    } else {
         throw Error();
     }
 
-    const movieProvidersFlatrate = moviesProviders.results.BR.flatrate;
-    insertContent(movieTitle, movieResume, movieCover, movieReleaseDate, movieGenerosArray, movieProvidersFlatrate)    
+    // if ('rent' in moviesProviders.results['BR']){
+    //     const movieProvidersRent = moviesProviders.results.BR.rent;
+    //     return movieProvidersRent;
+    // }
+
+    // if ('buy' in moviesProviders.results['BR']){
+    //     const movieProvidersBuy = moviesProviders.results.BR.buy;
+    //     return movieProvidersBuy
+    // }
+
+    // if (!('flatrate' in moviesProviders.results['BR'])){
+    //     throw Error();
+    // }
+    
+
 }
 
-async function insertContent(movieTitle, movieResume, movieCover, movieReleaseDate, movieGenerosArray, movieProvidersFlatrate){
+async function insertContent(movieTitle, movieResume, movieCover, movieReleaseDate, movieGenerosArray, movieProvidersFlatrate, movieProvidersBuy, movieProvidersRent){
     //Details
     await $(".title-movie").text(movieTitle);
     await $(".resume-movie").text(movieResume); 
     await $(".cover-movie").attr("src",movieCover); 
     await $(".release-date").text(movieReleaseDate); 
     await movieGenerosArray.map(createGenresTags);
-
+    
     //Provider
     await movieProvidersFlatrate.map(createProviderIcons);
+    await movieProvidersBuy.map(createProviderIconsBuy);
+    await movieProvidersRent.map(createProviderIconsRent);
+
     
     setTimeout(() => {
         $(".preloader").removeClass("active");
@@ -89,3 +113,23 @@ function createProviderIcons(movieProvidersFlatrate){
     imageTag.src = urlImageIcon;
     movieProviderArea.appendChild(imageTag);
 }
+
+function createProviderIconsBuy(movieProvidersBuy){
+    const movieProviderArea = document.querySelector(".buy-area");
+    $(".buy-area").innerHTML = '';
+    let imageTag = document.createElement("img");
+    const urlImageIcon = `https://www.themoviedb.org/t/p/original${movieProvidersBuy.logo_path}`;
+    imageTag.src = urlImageIcon;
+    movieProviderArea.appendChild(imageTag);
+}
+
+function createProviderIconsRent(movieProvidersRent){
+    const movieProviderArea = document.querySelector(".rent-area");
+    $(".rent-area").innerHTML = '';
+    let imageTag = document.createElement("img");
+    const urlImageIcon = `https://www.themoviedb.org/t/p/original${movieProvidersRent.logo_path}`;
+    imageTag.src = urlImageIcon;
+    movieProviderArea.appendChild(imageTag);
+}
+
+

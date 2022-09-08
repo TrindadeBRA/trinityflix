@@ -9,11 +9,11 @@ body {
 html body #home-rocketflix,
 html body #descubra-esse-filme {
     /* background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%); */
-    background:linear-gradient(43deg, #37393e 0%, #000 52%, #666 100%);
+    background: linear-gradient(43deg, #37393e 0%, #000 52%, #666 100%);
     display: block;
 }
 
-#descubra-esse-filme .container{
+#descubra-esse-filme .container {
     min-height: 100vh;
 }
 
@@ -35,7 +35,7 @@ html body #descubra-esse-filme {
     top: 0;
     bottom: 0;
     /* background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%); */
-    background:linear-gradient(43deg, #37393e 0%, #000 52%, #666 100%);
+    background: linear-gradient(43deg, #37393e 0%, #000 52%, #666 100%);
 
 }
 
@@ -44,7 +44,7 @@ html body #descubra-esse-filme {
 }
 
 .preloader:not(.active) {
-    display: none!important;
+    display: none !important;
 }
 
 .cover-movie {
@@ -70,7 +70,7 @@ html body #descubra-esse-filme {
     gap: 12px;
 }
 
-.genres-area span{
+.genres-area span {
     color: #fff;
     font-weight: 600;
     border: 1px solid #fff;
@@ -80,7 +80,7 @@ html body #descubra-esse-filme {
     transition: all 0.3s ease-in;
 }
 
-.genres-area span:hover{
+.genres-area span:hover {
     color: #000;
     background-color: #fff;
     border: 1px solid #fff;
@@ -90,11 +90,14 @@ html body #descubra-esse-filme {
 .layout-movie {
     width: 100%;
 }
+
 .image-area {
     width: 25%;
 }
+
 .info-area {
-    width: 75%;
+    width: calc(50% - 3rem);
+    flex-wrap: wrap;
 }
 
 .plataforms-avaible {
@@ -102,18 +105,27 @@ html body #descubra-esse-filme {
     font-weight: 600;
 }
 
-
-.providers-area {
+.providers-component div{
     gap: 10px;
-  }
+    justify-content: center;
+}
 
-  .providers-area img {
+.providers-component p {
+    text-align: center;
+}
+
+.providers-component div img {
     width: 60px;
     height: 60px;
     border-radius: 12px;
-  }
+}
 
 .release-date-mock {
     color: #fff;
     font-weight: 600;
+}
+
+
+.providers-component {
+    width: 25%;
 }

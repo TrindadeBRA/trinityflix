@@ -194,3 +194,24 @@ async function getMovieDataProvider(movieID){
 //     return lastMovieURL
 // }
 
+// async function getLastID(){
+//     try {
+//         const promiseMoviesLastID = await axios.get(generateLastMovieURL());
+//         const moviesLastID = promiseMoviesLastID.data.id;
+//         // console.log(moviesLastID)
+//         return generateRandomID(moviesLastID);
+        
+//     } catch (e) {
+//         console.log(e)
+//     }
+// }
+// console.log(getLastID())
+
+// function generateLastMovieURL(){
+//     const apiKeyURL = "?api_key=454ff844d6893b9ebd5a0f6c518568eb";
+//     const lastMovieURL = `https://api.themoviedb.org/3/movie/latest${apiKeyURL}`;
+//     return lastMovieURL
+// }
+
+
+
