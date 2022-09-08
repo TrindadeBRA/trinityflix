@@ -50,7 +50,7 @@ function saveMovieDetails(moviesDetail, moviesProviders){
         throw Error();
     }
     
-    if ('flatrate' in moviesProviders.results['BR'], 'rent' in moviesProviders.results['BR'], 'buy' in moviesProviders.results['BR']){
+    if ('flatrate' in moviesProviders.results['BR'] && 'rent' in moviesProviders.results['BR'] && 'buy' in moviesProviders.results['BR']){
         const movieProvidersFlatrate = moviesProviders.results.BR.flatrate;
         const movieProvidersRent = moviesProviders.results.BR.rent;
         const movieProvidersBuy = moviesProviders.results.BR.buy;
