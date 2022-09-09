@@ -95,8 +95,12 @@ html body #descubra-esse-filme {
     width: 25%;
 }
 
-.info-area {
+/* .info-area {
     width: calc(50% - 3rem);
+} */
+
+.info-area {
+    width: calc(75% - 1.5rem);
 }
 
 .plataforms-avaible {
