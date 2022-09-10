@@ -1,0 +1,91 @@
+#movie-details {
+    background-color: #12151f;
+    .container {
+        .row {
+            #sidebar {
+                img.cover-movie {
+                    width: 100%;
+                }
+            }
+            .layout-movie {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: relative;
+                z-index: 1;
+                padding: 0 12px;
+                height: 100%;
+                align-items: center;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-image: radial-gradient(circle, rgba(0,0,0,0.4247899843531162) 0%, rgba(18,21,31,1) 75%);
+                    z-index: -1;
+                }
+                .info-area {
+                    h1 {
+                        line-height: 28px;
+                    }
+                    .genres-area {
+                        gap: 12px;
+                        span {
+                            color: #fff;
+                            font-weight: 600;
+                            border: 1px solid #fff;
+                            padding: 5px 20px;
+                            border-radius: 20px;
+                            font-size: 12px;
+                            transition: all 0.3s ease-in;
+                            &:hover {
+                                color: #000;
+                                background-color: #fff;
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+                    * {
+                        color: #fff;
+                    }
+                }    
+            }    
+        }    
+    }    
+}
+
+#movie-videos {
+    background-color: #0f121c;
+    .row {
+        .providers-area {
+            background-color: #12151f;
+            color: #fff;
+        }
+    }
+}
+
+.preloader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* background: linear-gradient(43deg, #102d71 0%, #000000 52%, #c12a23 100%); */
+    background: linear-gradient(43deg, #37393e 0%, #000 52%, #666 100%);
+    z-index: 99999999999;
+    &.active {
+        display: flex;
+    }
+    &:not(.active) {
+        display: none !important;
+    }
+}
+
+.navbar-trinityflix {
+    background-color: #0f121c!important;
+    a {
+        color: #fff!important;
+    }
+}
