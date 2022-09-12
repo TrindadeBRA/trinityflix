@@ -24,9 +24,6 @@
   background-image: radial-gradient(circle, rgba(0, 0, 0, 0.4247899844) 0%, rgb(18, 21, 31) 75%);
   z-index: -1;
 }
-#movie-details .container .row .layout-movie .info-area h1 {
-  line-height: 28px;
-}
 #movie-details .container .row .layout-movie .info-area .genres-area {
   gap: 12px;
 }
@@ -54,6 +51,39 @@
 #movie-videos .row .providers-area {
   background-color: #12151f;
   color: #fff;
+}
+#movie-videos .row .providers-area .providor-area-title {
+  background-color: #0f121c;
+  border: 10px solid #12151f;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#movie-videos .row .providers-area .providor-area-title h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  line-height: 43px;
+  margin: 0;
+  color: #fff;
+}
+#movie-videos .row .providers-area .subtitle-provider {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+#movie-videos .row .providers-area .icons-provider {
+  display: flex;
+  flex-wrap: wrap;
+}
+#movie-videos .row .providers-area .icons-provider img {
+  width: calc(20% - 8px);
+  margin: 0 4px;
+  margin-right: 4px;
+  border-radius: 12px;
 }
 
 .preloader {
