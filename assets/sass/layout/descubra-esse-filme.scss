@@ -1,0 +1,148 @@
+
+#movie-details {
+    background-color: #12151f;
+    .container {
+        .row {
+            #sidebar {
+                img.cover-movie {
+                    width: 100%;
+                }
+            }
+            .layout-movie {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: relative;
+                z-index: 1;
+                padding: 0 12px;
+                height: 100%;
+                align-items: center;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-image: radial-gradient(circle, rgba(0,0,0,0.4247899843531162) 0%, rgba(18,21,31,1) 75%);
+                    z-index: -1;
+                }
+                .info-area {
+                    h1 {
+                        // line-height: 28px;
+                    }
+                    .genres-area {
+                        gap: 12px;
+                        span {
+                            color: #fff;
+                            font-weight: 600;
+                            border: 1px solid #fff;
+                            padding: 5px 20px;
+                            border-radius: 20px;
+                            font-size: 12px;
+                            transition: all 0.3s ease-in;
+                            &:hover {
+                                color: #000;
+                                background-color: #fff;
+                                border: 1px solid #fff;
+                            }
+                        }
+                    }
+                    * {
+                        color: #fff;
+                    }
+                }    
+            }    
+        }    
+    }    
+}
+
+#movie-videos {
+    background-color: #0f121c;
+    .row {
+        .providers-area {
+            background-color: #12151f;
+            color: #fff;
+
+            .providor-area-title {
+                background-color: #0f121c;
+                border: 10px solid #12151f;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h3 {
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    text-align: center;
+                    line-height: 43px;
+                    margin: 0;
+                    color: #fff;
+                }
+            }
+            .subtitle-provider {
+                text-transform: uppercase;
+                font-size: 15px;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            .icons-provider {
+                display: flex;
+                flex-wrap: wrap;
+                img {
+                    width: calc(20% - 8px);
+                    margin: 0 4px;
+                    margin-right: 4px;
+                    border-radius: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        #movie-details{
+            .row {
+                flex-direction: column;
+                .mob-100 {
+                    max-width: 100%!important;
+                    .cover-movie {
+                        width: 75%!important;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                    .layout-movie {
+                        &:before {
+                             background-image: radial-gradient(circle, rgba(15,18,28,0.7889356426164216) 0%, rgba(15,18,28,1) 100%)!important; 
+                         }
+                        .info-area {
+                            .title-movie {
+                                text-align: left!important;
+                                margin-top: 50px;
+                              }
+                              p.resume-movie {
+                                text-align: justify!important;
+                              }
+                        }
+                    }
+                }
+            }
+        }
+        #movie-videos {
+            .row {
+                .mob-100 {
+                    max-width: 100%;
+                    flex: 100%;
+                    .providers-area {
+                        width: 80%;
+                        margin: 0 auto;
+                        margin-bottom: 50px; 
+                    }
+                }
+            }
+        }
+    }
+}
