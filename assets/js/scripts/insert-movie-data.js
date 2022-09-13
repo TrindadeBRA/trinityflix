@@ -2,6 +2,7 @@
 async function insertContent(arrayWithAllContent){
 
     //primeiro container - ResumeOfMovie
+    // console.log("XXXX> ", arrayWithAllContent);
     await $(".title-movie").text(arrayWithAllContent[0].title);
     await $(".original-title").text(arrayWithAllContent[0].originalTitle);
     await $(".resume-movie").text(arrayWithAllContent[0].resume); 
@@ -15,7 +16,7 @@ async function insertContent(arrayWithAllContent){
     const iframeURL = `https://www.youtube.com/embed/${arrayWithAllContent[1].trailerKey}`;
     $("#iframe-videos").attr("src", iframeURL);
     const providersArray = arrayWithAllContent[1].providers;
-    console.log("XXXX> ", arrayWithAllContent);
+    // console.log("XXXX> ", arrayWithAllContent);
 
     createIconsProviders(providersArray)
 

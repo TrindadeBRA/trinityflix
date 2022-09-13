@@ -8,9 +8,23 @@ function createArrayContent(resumeOfMovie, trailerAndProviderOfMovie){
 
 //Separa dados do primeiro container - ResumeOfMovie
 function movieResumeData(movieDetailsData){
-    const movieTitle = movieDetailsData.title;
+    const movieTranslationArray =  movieDetailsData.translations.translations;
+
+    const movieTranslationDataBR = movieTranslationArray.filter(obj => {
+        return obj.iso_3166_1 === "BR";
+    })
+
+    console.log(movieTranslationDataBR)
+    const movieTranslatedTilte = movieTranslationDataBR[0].data.title;
+    const movieTranslatedResume = movieTranslationDataBR[0].data.overview;
+
+    const movieTitle = movieTranslatedTilte;
+    const movieResume = movieTranslatedResume;
+    
+    // const movieTitle = movieDetailsData.title;
+    // const movieResume = movieDetailsData.overview;
+
     const movieOgTitle = movieDetailsData.original_title;
-    const movieResume = movieDetailsData.overview;
     const movieReleaseDate = movieDetailsData.release_date.split("-").reverse().join("/");
     const movieCover = `https://image.tmdb.org/t/p/original${movieDetailsData.poster_path}`;
     const movieBackground = `https://image.tmdb.org/t/p/original${movieDetailsData.backdrop_path}`;
@@ -26,7 +40,8 @@ function movieResumeData(movieDetailsData){
         genresArray: movieGenerosArray
     };
 
-    // queryGeneratorYT(movieResumeData)
+
+
 
     console.log("movieResumeData: ", movieResumeData);
     
@@ -34,41 +49,6 @@ function movieResumeData(movieDetailsData){
 
 }
 
-
-// function getTrailerYoutubeURL(queryString) {
-//     const paramAPI = "&key=AIzaSyDXUWk9u72wm1jzmgVEqCcMJUtiML-bs8A";
-
-//     const paramQuerySearch = `?q=${queryString.replaceAll(' ', '+')}`;
-    
-//     const movieProviderURL = `https://www.googleapis.com/youtube/v3/search${paramQuerySearch}${paramAPI}`;
-
-//     getTrailerYT(movieProviderURL)
-//     // return movieProviderURL
-// }
-
-// function queryGeneratorYT(movieResumeData){
-//     const queryString = `${movieResumeData.title} trailer oficial legendado`
-//     getTrailerYoutubeURL(queryString)
-// }
-
-// async function getTrailerYT(movieProviderURL){
-//     try {
-//         const promiseTrailerYT = await axios.get(movieProviderURL);
-//         const trailerYTData = promiseTrailerYT.data;
-
-//         const trailerID = getIdTrailerYT(trailerYTData)
-//         return trailerID
-//         // console.log(trailerYTData);
-
-//     } catch (e) {
-//         console.log("ERRO: ",e)
-//     }
-// }
-
-// function getIdTrailerYT(trailerYTData){
-//     const trailerID = trailerYTData.items[0].id.videoId;
-//     return trailerID
-// }
 
 
 
@@ -85,6 +65,11 @@ function movieResumeData(movieDetailsData){
     const movieTrailerArrayData = getTrailerData(movieTrailerArray);
     const movieTrailerSite = movieTrailerArrayData.site;
     const movieTrailerKey = movieTrailerArrayData.key;
+
+    // const movieYoutubeKeyAPI = searchThisTrailer(movieDetailsData);
+
+    // console.log("Key tem q dropar aqui> ",movieYoutubeKeyAPI)       
+
 
     //Provider
     const movieProviderResults = movieDetailsData["watch/providers"].results;
@@ -108,9 +93,11 @@ function getTrailerData(movieTrailerArray) {
     if (movieTrailerArray.length === 0){
         const errorTrailer = {
             key: "NmwVnaSlZkw",
-            site: "sem-trailer"
+            site: "api-yt-trailer"
         }
         return errorTrailer;   
+
+
     } else {
         return movieTrailerArray[0]
     }

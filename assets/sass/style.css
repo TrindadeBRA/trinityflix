@@ -108,4 +108,37 @@
 }
 .navbar-trinityflix a {
   color: #fff !important;
+}
+
+@media screen and (max-width: 600px) {
+  body #movie-details .row {
+    flex-direction: column;
+  }
+  body #movie-details .row .mob-100 {
+    max-width: 100% !important;
+  }
+  body #movie-details .row .mob-100 .cover-movie {
+    width: 75% !important;
+    margin: 0 auto;
+    display: block;
+  }
+  body #movie-details .row .mob-100 .layout-movie:before {
+    background-image: radial-gradient(circle, rgba(15, 18, 28, 0.7889356426) 0%, rgb(15, 18, 28) 100%) !important;
+  }
+  body #movie-details .row .mob-100 .layout-movie .info-area .title-movie {
+    text-align: left !important;
+    margin-top: 50px;
+  }
+  body #movie-details .row .mob-100 .layout-movie .info-area p.resume-movie {
+    text-align: justify !important;
+  }
+  body #movie-videos .row .mob-100 {
+    max-width: 100%;
+    flex: 100%;
+  }
+  body #movie-videos .row .mob-100 .providers-area {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
 }/*# sourceMappingURL=style.css.map */
