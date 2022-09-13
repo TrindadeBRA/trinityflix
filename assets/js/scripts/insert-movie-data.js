@@ -23,6 +23,7 @@ async function insertContent(arrayWithAllContent){
     $(document).ready(function(){
         setTimeout(() => {
             $(".preloader").removeClass("active");
+            $("html").addClass("no-preloader")
         }, 750)
     })
 }
