@@ -25,7 +25,7 @@ async function insertContent(arrayWithAllContent){
             $(".preloader").removeClass("active");
             $("html").addClass("no-preloader")
         }, 750)
-    })
+    }) 
 }
 
 //Cria um span para cada categoria do array
