@@ -2,7 +2,6 @@
 async function insertContent(arrayWithAllContent){
 
     //primeiro container - ResumeOfMovie
-    // console.log("XXXX> ", arrayWithAllContent);
     await $(".title-movie").text(arrayWithAllContent[0].title);
     await $(".original-title").text(arrayWithAllContent[0].originalTitle);
     await $(".resume-movie").text(arrayWithAllContent[0].resume); 
@@ -25,7 +24,7 @@ async function insertContent(arrayWithAllContent){
             $(".preloader").removeClass("active");
             $("html").addClass("no-preloader")
         }, 750)
-    }) 
+    })
 }
 
 //Cria um span para cada categoria do array
